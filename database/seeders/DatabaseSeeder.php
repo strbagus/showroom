@@ -18,6 +18,10 @@ class DatabaseSeeder extends Seeder
         $this->call([
             LevelSeeder::class,
             UserSeeder::class,
+            MerkSeeder::class,
+            ModelSeeder::class,
+            TypeSeeder::class,
+            ItemSeeder::class,
         ]);
     }
 }
