@@ -26,11 +26,19 @@ Route::get('/', function () {
     ]);
 });
 Route::middleware(['auth', 'verified'])->group(function (){
-    Route::get('/dashboard', function () {
+    Route::get('dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
-    Route::get('/ref', [RefController::class, 'index'])->name('ref');
-    Route::get('/item', [ItemController::class, 'index'])->name('item');
+    Route::get('ref', [RefController::class, 'index'])->name('ref');
+    Route::post('refmerk/create', [RefController::class, 'createMerk'])->name('refmerk.create');
+    Route::get('refmerk/{refmerk}/edit', [RefController::class, 'editMerk'])->name('refmerk.edit');
+    Route::put('refmerk/{refmerk}', [RefController::class, 'updateMerk'])->name('refmerk.update');
+    Route::delete('refmerk/{refmerk}', [RefController::class, 'deleteMerk'])->name('refmerk.delete');
+    Route::post('reftype/create', [RefController::class, 'createMerk'])->name('reftype.create');
+    Route::get('reftype/{reftype}/edit', [RefController::class, 'editMerk'])->name('reftype.edit');
+    Route::put('reftype/{reftype}', [RefController::class, 'updateMerk'])->name('reftype.update');
+    Route::delete('reftype/{reftype}', [RefController::class, 'deleteMerk'])->name('reftype.delete');
+    Route::get('item', [ItemController::class, 'index'])->name('item');
 });
 
 require __DIR__.'/auth.php';

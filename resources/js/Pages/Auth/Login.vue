@@ -27,7 +27,7 @@ const submit = () => {
 
 <template>
     <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
-        <ApplicationLogo />
+        <ApplicationLogo class="fill-black" />
         <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
             <Head title="Log in" />
             <h1 class="text-3xl my-5 text-gray-700 font-bold">Login</h1>
